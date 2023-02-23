@@ -4,11 +4,9 @@ import "./component.sass"
 
 
 export default class UserMenu extends ClassNameComponent {
-    constructor(props) {
-        super(props, "user-menu")
-    }
-
     render = () => (
-        <div className={this.className}></div>
+        <div className={this.className}>
+            <div className="user-menu__title">Login</div>
+        </div>
     )
 }

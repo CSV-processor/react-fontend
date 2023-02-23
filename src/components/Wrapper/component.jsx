@@ -8,10 +8,6 @@ import "./component.sass"
 
 
 export default class Wrapper extends ClassNameComponent {
-    constructor(props) {
-        super(props, "wrapper")
-    }
-
     render = () => (
         <div className={this.className}>
             <Header className="wrapper__header"/>
