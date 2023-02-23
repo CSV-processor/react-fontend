@@ -1,12 +1,22 @@
-import React from "react";
+import ClassNameComponent from "../../modules/ClassNameComponent"
+
+import Header from "../Header/component"
+import Footer from "../Footer/component"
+import Main from "../Main/component"
 
 import "./component.sass"
 
 
-export default class Wrapper extends React.Component {
-    render() {
-        return (
-            <div className="wrapper"></div>
-        )
+export default class Wrapper extends ClassNameComponent {
+    constructor(props) {
+        super(props, "wrapper")
     }
+
+    render = () => (
+        <div className={this.className}>
+            <Header className="wrapper__header"/>
+            <Main className="wrapper__main"/>
+            <Footer className="wrapper__footer"/>
+        </div>
+    )
 }

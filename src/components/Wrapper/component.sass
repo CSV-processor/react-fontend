@@ -1,6 +1,15 @@
 .wrapper
     &
         display: grid
+        grid-template-areas: "header" "main" "footer"
+        grid-template-rows: 50px 1fr 150px
+        background-color: red
 
     &__header
         grid-area: header
+
+    &__main
+        grid-area: main
+
+    &__footer
+        grid-area: footer

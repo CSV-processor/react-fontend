@@ -1,15 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from "react"
+import ReactDOM from "react-dom/client"
 
-import App from "./App";
-import reportWebVitals from "./utils/reportWebVitals";
+import "./index.sass"
+
+import Wrapper from "./components/Wrapper/component"
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <React.StrictMode>
-    <App/>
+    <Wrapper/>
   </React.StrictMode>
 )
-
-reportWebVitals()
