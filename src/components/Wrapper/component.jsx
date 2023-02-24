@@ -1,5 +1,4 @@
 import ClassNameComponent from "../../modules/ClassNameComponent"
-import {cn} from "../../modules/BemClassname"
 
 import Header from "../Header/component"
 import Footer from "../Footer/component"
@@ -11,9 +10,9 @@ import "./component.sass"
 export default class Wrapper extends ClassNameComponent {
     render = () => (
         <div className={this.className}>
-            <Header className={cn("wrapper", "header")()} />
-            <Main className={cn("wrapper", "main")()} />
-            <Footer className={cn("wrapper", "footer")()} />
+            <Header className="wrapper__header"/>
+            <Main className="wrapper__main"/>
+            <Footer className="wrapper__footer"/>
         </div>
     )
 }
