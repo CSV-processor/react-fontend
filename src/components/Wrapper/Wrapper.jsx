@@ -1,10 +1,10 @@
 import ClassNameComponent from "../../modules/ClassNameComponent"
 
-import Header from "../Header/component"
-import Footer from "../Footer/component"
-import Main from "../Main/component"
+import Header from "../Header/Header"
+import Footer from "../Footer/Footer"
+import Main from "../Main/Main"
 
-import "./component.sass"
+import "./Wrapper.sass"
 
 
 export default class Wrapper extends ClassNameComponent {

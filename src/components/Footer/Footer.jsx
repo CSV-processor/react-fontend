@@ -1,6 +1,6 @@
 import ClassNameComponent from "../../modules/ClassNameComponent"
 
-import "./component.sass"
+import "./Footer.sass"
 
 
 export default class Footer extends ClassNameComponent {

@@ -1,10 +1,10 @@
 import {DataGrid} from "@mui/x-data-grid";
 
 import ClassNameComponent from "../../modules/ClassNameComponent"
-import TableEditorTools from "../TableEditorTools/component"
+import TableEditorTools from "../TableEditorTools/TableEditorTools"
 
 
-import "./component.sass"
+import "./TableEditor.sass"
 
 
 const rows = [

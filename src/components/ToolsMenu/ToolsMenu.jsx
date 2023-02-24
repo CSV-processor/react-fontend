@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 
 import ClassNameComponent from "../../modules/ClassNameComponent"
 
-import "./component.sass"
+import "./ToolsMenu.sass"
 
 
 export default class ToolsMenu extends ClassNameComponent {

@@ -1,6 +1,6 @@
 import ClassNameComponent from "../../modules/ClassNameComponent"
 
-import "./component.sass"
+import "./UserMenu.sass"
 
 
 export default class UserMenu extends ClassNameComponent {

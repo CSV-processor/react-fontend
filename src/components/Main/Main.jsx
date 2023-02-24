@@ -1,8 +1,8 @@
 import ClassNameComponent from "../../modules/ClassNameComponent"
-import ToolsMenu from "../ToolsMenu/component"
-import TableEditor from "../TableEditor/component"
+import ToolsMenu from "../ToolsMenu/ToolsMenu"
+import TableEditor from "../TableEditor/TableEditor"
 
-import "./component.sass"
+import "./Main.sass"
 
 
 export default class Main extends ClassNameComponent {

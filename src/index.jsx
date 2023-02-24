@@ -4,7 +4,7 @@ import {createTheme, ThemeProvider} from "@mui/material/styles"
 
 import "./index.sass"
 
-import Wrapper from "./components/Wrapper/component"
+import Wrapper from "./components/Wrapper/Wrapper"
 
 
 const theme = createTheme({

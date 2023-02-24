@@ -1,7 +1,7 @@
 import ClassNameComponent from "../../modules/ClassNameComponent"
-import UserMenu from "../UserMenu/component"
+import UserMenu from "../UserMenu/UserMenu"
 
-import "./component.sass"
+import "./Header.sass"
 import logo from "./logo.svg";
 
 
