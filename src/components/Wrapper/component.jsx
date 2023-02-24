@@ -8,11 +8,11 @@ import "./component.sass"
 
 
 export default class Wrapper extends ClassNameComponent {
-    render = () => (
+    render = () => <>
         <div className={this.className}>
             <Header className={this.cn("header")()} />
             <Main className={this.cn("main")()} />
             <Footer className={this.cn("footer")()} />
         </div>
-    )
+    </>
 }

@@ -6,10 +6,10 @@ import logo from "./logo.svg";
 
 
 export default class Header extends ClassNameComponent {
-    render = () => (
+    render = () => <>
         <div className={this.className}>
             <img className="header__logo" alt="logo" src={logo}/>
             <UserMenu className="header__user-menu"/>
         </div>
-    )
+    </>
 }

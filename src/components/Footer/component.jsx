@@ -4,7 +4,7 @@ import "./component.sass"
 
 
 export default class Footer extends ClassNameComponent {
-    render = () => (
+    render = () => <>
         <div className={this.className}></div>
-    )
+    </>
 }

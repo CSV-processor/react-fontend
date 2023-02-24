@@ -8,10 +8,8 @@ import Wrapper from "./components/Wrapper/component"
 
 
 const theme = createTheme({
-  status: {
-    danger: '#e53e3e',
-  },
   palette: {
+    mode: "dark",
     primary: {
       main: "hsl(191, 89%, 42%)",
     },
