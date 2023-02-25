@@ -1,16 +1,15 @@
-import ClassNameComponent from "../../modules/ClassNameComponent"
+import Box from "@mui/material/Box"
+
+import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
 import TableTools from "../TableTools/TableTools"
 import TableRowTools from "../TableRowTools/TableRowTools"
 
 
-import "./TableEditorTools.sass"
-
-
-export default class TableEditorTools extends ClassNameComponent {
+export default class TableEditorTools extends MuiSxComponentInject {
     render = () => <>
-        <div className={this.className}>
+        <Box sx={this.generateSx({justifyContent: "space-between", display: "flex"})}>
             <TableRowTools />
             <TableTools />
-        </div>
+        </Box>
     </>
 }

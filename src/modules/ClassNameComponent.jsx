@@ -1,5 +1,8 @@
 import React from "react"
-import {cn} from "./BemClassname"
+import {withNaming} from "@bem-react/classname"
+
+
+export const cn = withNaming({e: "__", m: "_"})
 
 
 export default class ClassNameComponent extends React.Component {
