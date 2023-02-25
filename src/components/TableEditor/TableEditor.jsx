@@ -37,14 +37,15 @@ const columns = [
 export default class TableEditor extends ClassNameComponent {
     render = () => <>
         <div className={this.className}>
+            <TableEditorTools />
             <DataGrid
+                className={this.cn("data-grid")()}
                 rows={rows}
                 columns={columns}
                 pageSize={20}
                 checkboxSelection
                 disableSelectionOnClick
             />
-            <TableEditorTools className={this.cn("tools")()} />
         </div>
     </>
 }
