@@ -1,12 +1,30 @@
-import ClassNameComponent from "../../modules/ClassNameComponent"
+import Box from "@mui/material/Box"
 
-import "./UserMenu.sass"
+import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
 
 
-export default class UserMenu extends ClassNameComponent {
-    render = () => <>
-        <div className={this.className}>
-            <div className={this.cn("title")()}>Login</div>
-        </div>
-    </>
+export default class UserMenu extends MuiSxComponentInject {
+    generateRender() {
+        return (
+            <Box sx={{width: "60px"}}>
+                <Box sx={{
+                    height: "100%",
+
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+
+                    color: "hsl(193, 95%, 68%)",
+                    fontFamily: "\"Roboto\", sans-serif",
+                    fontWeight: "bold",
+                    "&:hover": {
+                        cursor: "pointer",
+                        color: "hsl(193, 95%, 50%)",
+                    }
+                }}>
+                    Login
+                </Box>
+            </Box>
+        )
+    }
 }

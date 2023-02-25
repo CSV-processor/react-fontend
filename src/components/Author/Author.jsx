@@ -1,12 +1,22 @@
-import ClassNameComponent from "../../modules/ClassNameComponent"
+import Box from "@mui/material/Box"
+import Link from "@mui/material/Link"
 
-import "./Author.sass"
+import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
 
 
-export default class Author extends ClassNameComponent {
-    render = () => <>
-        <div className={this.className}>
-            Created by <a class={this.cn("link")()} href="https://github.com/LEv145">LEv145</a> with love&lt;3
-        </div>
-    </>
+export default class Author extends MuiSxComponentInject {
+    generateRender() {
+        return (
+            <Box sx={{
+                color: "hsl(36, 2%, 91%)",
+                fontFamily: "\"Roboto\", sans-serif",
+                fontSize: "15px",
+                fontWeight: "bold",
+            }}>
+                Created by <Link href="https://github.com/LEv145">
+                    LEv145
+                </Link> with love&lt;3
+            </Box>
+        )
+    }
 }

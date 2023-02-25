@@ -1,10 +1,8 @@
-import {DataGrid} from "@mui/x-data-grid";
+import Box from "@mui/material/Box"
+import {DataGrid} from "@mui/x-data-grid"
 
-import ClassNameComponent from "../../modules/ClassNameComponent"
+import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
 import TableEditorTools from "../TableEditorTools/TableEditorTools"
-
-
-import "./TableEditor.sass"
 
 
 const rows = [
@@ -34,18 +32,20 @@ const columns = [
 ];
 
 
-export default class TableEditor extends ClassNameComponent {
-    render = () => <>
-        <div className={this.className}>
-            <TableEditorTools />
-            <DataGrid
-                className={this.cn("data-grid")()}
-                rows={rows}
-                columns={columns}
-                pageSize={20}
-                checkboxSelection
-                disableSelectionOnClick
-            />
-        </div>
-    </>
+export default class TableEditor extends MuiSxComponentInject {
+    generateRender() {
+        return (
+            <Box sx={{"height": "578px"}}>
+                <TableEditorTools sx={{marginTop: "15px"}} />
+                <DataGrid
+                    sx={{marginTop: "3px"}}
+                    rows={rows}
+                    columns={columns}
+                    pageSize={20}
+                    checkboxSelection
+                    disableSelectionOnClick
+                />
+            </Box>
+        )
+    }
 }

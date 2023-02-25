@@ -1,21 +1,22 @@
 import IconButton from "@mui/material/IconButton"
+import Box from "@mui/material/Box"
 
-import ClassNameComponent from "../../modules/ClassNameComponent"
+import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
 import AddRowIcon from "../AddRowIcon/AddRowIcon"
 import AddColumnIcon from "../AddColumnIcon/AddColumnIcon"
 
-import "./TableTools.sass"
 
-
-export default class TableTools extends ClassNameComponent {
-    render = () => <>
-        <div className={this.className}>
-            <IconButton aria-label="add-row">
-                <AddRowIcon />
-            </IconButton>
-            <IconButton aria-label="add-column">
-                <AddColumnIcon />
-            </IconButton>
-        </div>
-    </>
+export default class TableTools extends MuiSxComponentInject {
+    generateRender() {
+        return (
+            <Box>
+                <IconButton aria-label="add-row">
+                    <AddRowIcon />
+                </IconButton>
+                <IconButton aria-label="add-column">
+                    <AddColumnIcon />
+                </IconButton>
+            </Box>
+        )
+    }
 }

@@ -1,15 +1,21 @@
-import ClassNameComponent from "../../modules/ClassNameComponent"
+import Box from "@mui/material/Box"
+
+import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
 import UserMenu from "../UserMenu/UserMenu"
-
-import "./Header.sass"
-import logo from "./logo.svg";
+import Logo from "../Logo/Logo"
 
 
-export default class Header extends ClassNameComponent {
-    render = () => <>
-        <div className={this.className}>
-            <img className="header__logo" alt="logo" src={logo}/>
-            <UserMenu className="header__user-menu"/>
-        </div>
-    </>
+export default class Header extends MuiSxComponentInject {
+    generateRender() {
+        return (
+            <Box sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                backgroundColor: "hsl(217, 19%, 27%)",
+            }}>
+                <Logo />
+                <UserMenu />
+            </Box>
+        )
+    }
 }

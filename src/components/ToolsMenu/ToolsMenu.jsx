@@ -1,16 +1,22 @@
-import Button from "@mui/material/Button";
+import Button from "@mui/material/Button"
+import Box from "@mui/material/Box"
 
-import ClassNameComponent from "../../modules/ClassNameComponent"
-
-import "./ToolsMenu.sass"
+import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
 
 
-export default class ToolsMenu extends ClassNameComponent {
-    render = () => <>
-        <div className={this.className}>
-            <Button variant="contained" className={this.cn("button")()}>Import</Button>
-            <Button variant="contained" className={this.cn("button")()}>Save</Button>
-            <Button variant="contained" className={this.cn("button")()}>Export</Button>
-        </div>
-    </>
+export default class ToolsMenu extends MuiSxComponentInject {
+    generateRender() {
+        return (
+            <Box sx={{
+                display: "flex",
+                gap: "5px",
+
+                height: "50px",
+            }}>
+                <Button variant="contained" sx={{width: "100%"}}>Import</Button>
+                <Button variant="contained" sx={{width: "100%"}}>Save</Button>
+                <Button variant="contained" sx={{width: "100%"}}>Export</Button>
+            </Box>
+        )
+    }
 }
