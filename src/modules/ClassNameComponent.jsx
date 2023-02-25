@@ -1,5 +1,8 @@
 import React from "react"
-import {cn} from "./BemClassname"
+import {withNaming} from "@bem-react/classname"
+
+
+const cn = withNaming({e: "__", m: "_"})
 
 
 export default class ClassNameComponent extends React.Component {
@@ -16,4 +19,14 @@ export default class ClassNameComponent extends React.Component {
     cn (elem) {
         return cn(this.baseClassName, elem)
     }
+
+    renderElements() {
+        throw new Error("You have to implement the method doSomething!")
+    }
+
+    render = () => <>
+        <div className={this.className}>
+            renderElements()
+        </div>
+    </>
 }
