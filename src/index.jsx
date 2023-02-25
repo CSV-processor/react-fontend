@@ -1,15 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from "react"
+import ReactDOM from "react-dom/client"
+import {createTheme, ThemeProvider} from "@mui/material/styles"
 
-import App from "./App";
-import reportWebVitals from "./utils/reportWebVitals";
+import "./index.sass"
+
+import Wrapper from "./components/Wrapper/Wrapper"
 
 
+const theme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "hsl(191, 89%, 42%)",
+    },
+  },
+})
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <Wrapper/>
+    </ThemeProvider>
   </React.StrictMode>
 )
-
-reportWebVitals()
