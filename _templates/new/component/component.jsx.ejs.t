@@ -1,13 +1,16 @@
 ---
 to: <%= absPath %>/<%= component_name %>.jsx
 ---
-import ClassNameComponent from "../../modules/ClassNameComponent"
+import Box from "@mui/material/Box"
 
-import "./<%= component_name %>.sass"
+import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
 
 
-export default class <%= component_name %> extends ClassNameComponent {
-    render = () => <>
-        <div className={this.className}></div>
-    </>
+export default class <%= component_name %> extends MuiSxComponentInject {
+    generateRender() {
+        return (
+            <Box sx={{}}>
+            </Box>
+        )
+    }
 }
