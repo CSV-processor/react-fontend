@@ -1,5 +1,5 @@
 import LogoSvg from "./logo.svg";
-import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject.tsx"
+import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject"
 
 
 export default class Logo extends MuiSxComponentInject {

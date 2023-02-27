@@ -8,7 +8,7 @@ import AddColumnIcon from "../AddColumnIcon/AddColumnIcon"
 
 
 export default function TableEditor({sx = {}}: ISxProps) {
-    let thisSx = {}
+    const thisSx = {}
     sx = generateSx({sx: thisSx, parentSx: sx})
 
     return (

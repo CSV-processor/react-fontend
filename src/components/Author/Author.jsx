@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box"
 import Link from "@mui/material/Link"
 
-import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject.tsx"
+import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject"
 
 
 export default class Author extends MuiSxComponentInject {

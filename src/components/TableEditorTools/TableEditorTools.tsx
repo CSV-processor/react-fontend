@@ -7,7 +7,7 @@ import TableRowTools from "components/TableRowTools/TableRowTools"
 
 
 export default function TableEditorTools({sx = {}}: ISxProps) {
-    let thisSx = {justifyContent: "space-between", display: "flex"}
+    const thisSx = {justifyContent: "space-between", display: "flex"}
     sx = generateSx({sx: thisSx, parentSx: sx})
 
     return (

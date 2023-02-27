@@ -6,7 +6,7 @@ import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
 
 
 export default function TableRowTools({sx = {}}: ISxProps) {
-    let thisSx = {}
+    const thisSx = {}
     sx = generateSx({sx: thisSx, parentSx: sx})
 
     return (

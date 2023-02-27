@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box"
 
-import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject.tsx"
+import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject"
 
 
 export default class UserMenu extends MuiSxComponentInject {

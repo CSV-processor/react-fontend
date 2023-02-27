@@ -1,9 +1,8 @@
 import React from "react"
 import {Box} from "@mui/material"
-import {DataGrid, useGridApiContext} from "@mui/x-data-grid"
+import {DataGrid} from "@mui/x-data-grid"
 
 import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
-import TableEditorTools from "components/TableEditorTools/TableEditorTools"
 
 
 const rows = [
@@ -26,13 +25,11 @@ const columns = [
 
 
 export default function TableEditor({sx}: ISxProps) {
-    let thisSx = {"height": "578px"}
+    const thisSx = {"height": "578px"}
     sx = generateSx({sx: thisSx, parentSx: sx})
-    const apiRef = useGridApiContext()
 
     return (
         <Box sx={sx}>
-            <TableEditorTools sx={{marginTop: "15px"}} />
             <DataGrid
                 sx={{marginTop: "3px"}}
                 rows={rows}
