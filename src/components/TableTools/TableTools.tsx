@@ -1,10 +1,9 @@
 import React from "react"
-import IconButton from "@mui/material/IconButton"
-import Box from "@mui/material/Box"
+import {Box, IconButton} from "@mui/material"
 
 import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
-import AddRowIcon from "../AddRowIcon/AddRowIcon"
-import AddColumnIcon from "../AddColumnIcon/AddColumnIcon"
+import AddRowIcon from "components/AddRowIcon/AddRowIcon"
+import AddColumnIcon from "components/AddColumnIcon/AddColumnIcon"
 
 
 export default function TableEditor({sx = {}}: ISxProps) {

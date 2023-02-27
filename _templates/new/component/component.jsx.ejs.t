@@ -1,16 +1,21 @@
 ---
 to: <%= absPath %>/<%= component_name %>.jsx
 ---
-import Box from "@mui/material/Box"
+import React from "react"
+import {Box} from "@mui/material"
 
-import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject"
+import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
 
 
-export default class <%= component_name %> extends MuiSxComponentInject {
-    generateRender() {
-        return (
-            <Box sx={{}}>
-            </Box>
-        )
+export default function <%= component_name %>({sx}: ISxProps) {
+    const thisSx = {
+
     }
+    sx = generateSx({sx: thisSx, parentSx: sx})
+
+    return (
+        <Box sx={sx}>
+
+        </Box>
+    )
 }
