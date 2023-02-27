@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "jsx": "react",
+    "lib": ["es6", "dom"],
+    "module": "commonjs",
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+  },
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "build",
+  ]
+}

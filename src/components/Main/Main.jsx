@@ -1,8 +1,8 @@
 import ToolsMenu from "../ToolsMenu/ToolsMenu"
-import TableEditor from "../TableEditor/TableEditor"
+import TableEditor from "../TableEditor/TableEditor.tsx"
 import Box from "@mui/material/Box"
 
-import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
+import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject.tsx"
 
 
 export default class Main extends MuiSxComponentInject {

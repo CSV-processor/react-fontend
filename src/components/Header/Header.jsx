@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box"
 
-import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
+import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject.tsx"
 import UserMenu from "../UserMenu/UserMenu"
 import Logo from "../Logo/Logo"
 

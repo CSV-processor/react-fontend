@@ -3,7 +3,7 @@ to: <%= absPath %>/<%= component_name %>.jsx
 ---
 import Box from "@mui/material/Box"
 
-import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
+import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject.tsx"
 
 
 export default class <%= component_name %> extends MuiSxComponentInject {

@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button"
 import Box from "@mui/material/Box"
 
-import MuiSxComponentInject from "../../modules/MuiSxComponentInject"
+import {MuiSxComponentInject} from "../../modules/MuiSxComponentInject.tsx"
 
 
 export default class ToolsMenu extends MuiSxComponentInject {
