@@ -3,7 +3,6 @@ import {Box} from "@mui/material"
 
 import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
 import TableTools from "components/TableTools/TableTools"
-import TableRowTools from "components/TableRowTools/TableRowTools"
 
 
 export default function TableEditorTools({sx = {}}: ISxProps) {
@@ -11,8 +10,7 @@ export default function TableEditorTools({sx = {}}: ISxProps) {
     sx = generateSx({sx: thisSx, parentSx: sx})
 
     return (
-            <Box sx={sx}>
-            <TableRowTools />
+        <Box sx={sx}>
             <TableTools />
         </Box>
     )

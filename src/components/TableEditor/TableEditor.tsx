@@ -1,27 +1,53 @@
 import React from "react"
-import {Box} from "@mui/material"
-import {DataGrid} from "@mui/x-data-grid"
+import {Box, InputBase} from "@mui/material"
+import MUIDataTable, {TableToolbarSelect} from "mui-datatables"
 
 import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
 
 
-const rows = [
-    {id: 1, lastName: "Snow", firstName: "Jon", age: 35},
-    {id: 2, lastName: "Lannister", firstName: "Cersei", age: 42},
-    {id: 3, lastName: "Lannister", firstName: "Jaime", age: 45},
-    {id: 4, lastName: "Stark", firstName: "Arya", age: 16},
-    {id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null},
-    {id: 6, lastName: "Melisandre", firstName: null, age: 150},
-    {id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44},
-    {id: 8, lastName: "Frances", firstName: "Rossini", age: 36},
-    {id: 9, lastName: "Roxie", firstName: "Harvey", age: 65},
-];
-const columns = [
-    {field: "id", headerName: "Id", editable: true, type: "number"},
-    {field: "lastName", headerName: "Last name", editable: true},
-    {field: "firstName", headerName: "First name", editable: true},
-    {field: "age", headerName: "Age", editable: true, type: "number"},
+const data = [
+    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
+    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
+    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
+    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
+    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
+    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
+    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
+    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
+    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
+    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
 ]
+
+const columns = [
+    {
+        name: "id",
+        label: "Id",
+        options: {customBodyRender: customBodyRender},
+    },
+    {
+        name: "lastName",
+        label: "LastName",
+        options: {customBodyRender: customBodyRender},
+    },
+    {
+        name: "firstName",
+        label: "FirstName",
+        options: {customBodyRender: customBodyRender},
+    },
+    {
+        name: "age",
+        label: "Age",
+        options: {customBodyRender: customBodyRender},
+    },
+];
+
+
+function customBodyRender(value: any, _tableMeta: any, _updateValue: any) {
+    let type = "string"
+    if (typeof value === "number") type = "number"
+
+    return <InputBase defaultValue={value} type={type} />
+}
 
 
 export default function TableEditor({sx}: ISxProps) {
@@ -30,13 +56,15 @@ export default function TableEditor({sx}: ISxProps) {
 
     return (
         <Box sx={sx}>
-            <DataGrid
-                sx={{marginTop: "3px"}}
-                rows={rows}
+            <MUIDataTable
+                title={"Employee List"}
+                data={data}
                 columns={columns}
-                pageSize={20}
-                checkboxSelection
-                disableSelectionOnClick
+                options={{
+                    viewColumns: false,
+                    tableBodyMaxHeight: "590px",
+                    pagination: false,
+                }}
             />
         </Box>
     )

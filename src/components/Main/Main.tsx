@@ -3,7 +3,6 @@ import {Box} from "@mui/material"
 
 import ToolsMenu from "components/ToolsMenu/ToolsMenu"
 import TableEditor from "components/TableEditor/TableEditor"
-import TableEditorTools from "components/TableEditorTools/TableEditorTools"
 import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
 
 
@@ -15,7 +14,6 @@ export default function Main({sx}: ISxProps) {
         <Box sx={sx}>
             <ToolsMenu sx={{margin: "0 10px"}} />
             <TableEditor sx={{margin: "10px 10px 0 10px"}} />
-            <TableEditorTools sx={{marginTop: "3px"}} />
         </Box>
     )
 }

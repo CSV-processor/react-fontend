@@ -15,6 +15,15 @@ const theme = createTheme({
       main: "hsl(191, 89%, 42%)",
     },
   },
+  components: {
+    MUIDataTableToolbar: {
+      styleOverrides:{
+        root: {
+          "min-height": "56px"
+        }
+      }
+    }
+  }
 })
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
