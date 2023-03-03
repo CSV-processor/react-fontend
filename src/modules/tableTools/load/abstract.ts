@@ -1,7 +1,7 @@
-import {DataGridItems} from "../types"
+import {ParsedResult} from "../types"
 
 export abstract class AbstractTableLoad {
-    abstract load(data: string): DataGridItems
+    abstract load(data: string): ParsedResult
 }
 
 export class LoadError extends Error {

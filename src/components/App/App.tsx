@@ -4,7 +4,7 @@ import {Box} from "@mui/material"
 import Header from "components/Header/Header"
 import Footer from "components/Footer/Footer"
 import Main from "components/Main/Main"
-import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
+import {generateSx, ISxProps} from "modules/muiSxComponentInject"
 
 
 export default function App({sx}: ISxProps) {

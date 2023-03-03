@@ -1,7 +1,7 @@
 import React from "react"
 import {Box, Link} from "@mui/material"
 
-import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
+import {generateSx, ISxProps} from "modules/muiSxComponentInject"
 
 
 export default function Author({sx}: ISxProps) {

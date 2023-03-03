@@ -2,7 +2,7 @@ import React from "react"
 import {Box} from "@mui/material"
 
 import Author from "components/Author/Author"
-import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
+import {generateSx, ISxProps} from "modules/muiSxComponentInject"
 
 
 export default function Footer({sx}: ISxProps) {

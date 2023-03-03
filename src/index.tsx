@@ -8,23 +8,41 @@ import Wrapper from "./components/App/App"
 import reportWebVitals from 'utils/reportWebVitals'
 
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
       main: "hsl(191, 89%, 42%)",
     },
   },
+})
+theme = createTheme(theme, {
   components: {
     MUIDataTableToolbar: {
-      styleOverrides:{
-        root: {
+      styleOverrides: {root: {
           "min-height": "56px"
-        }
-      }
-    }
-  }
+      }}
+    },
+    MUIDataTableBodyRow: {
+      styleOverrides:{root: {
+        "&:nth-of-type(odd)": {
+          "background-color": "hsl(0, 0%, 19%)",
+        }},
+      },
+    },
+    MUIDataTableSelectCell: {
+      styleOverrides:{headerCell: {
+        backgroundColor: "hsl(0, 0%, 9%)"
+      }}
+    },
+    MUIDataTableHeadCell: {
+      styleOverrides:{root: {
+        backgroundColor: "hsl(0, 0%, 9%)"
+      }}
+    },
+  },
 })
+
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <React.StrictMode>

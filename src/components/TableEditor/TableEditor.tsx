@@ -1,22 +1,9 @@
 import React from "react"
-import {Box, InputBase} from "@mui/material"
-import MUIDataTable, {TableToolbarSelect} from "mui-datatables"
+import {Box, FormControlLabel, TextField} from "@mui/material"
+import MUIDataTable from "mui-datatables"
 
-import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
+import {generateSx, ISxProps} from "modules/muiSxComponentInject"
 
-
-const data = [
-    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
-    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
-    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
-    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
-    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
-    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
-    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
-    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
-    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
-    {id: 1, lastName: "Snow", firstName: "Man", age: 140},
-]
 
 const columns = [
     {
@@ -42,15 +29,21 @@ const columns = [
 ];
 
 
-function customBodyRender(value: any, _tableMeta: any, _updateValue: any) {
-    let type = "string"
-    if (typeof value === "number") type = "number"
-
-    return <InputBase defaultValue={value} type={type} />
+function customBodyRender(value: any, _tableMeta: any, updateValue: any) {
+    return <FormControlLabel
+        label=""
+        control={<TextField value={value} />}
+        onChange={event => updateValue((event.target as HTMLInputElement).value)}
+    />
 }
 
 
-export default function TableEditor({sx}: ISxProps) {
+interface TableEditorProps extends ISxProps {
+    data: {[key: string]: any}[]
+}
+
+
+export default function TableEditor({sx, data}: TableEditorProps) {
     const thisSx = {"height": "578px"}
     sx = generateSx({sx: thisSx, parentSx: sx})
 
@@ -64,6 +57,7 @@ export default function TableEditor({sx}: ISxProps) {
                     viewColumns: false,
                     tableBodyMaxHeight: "590px",
                     pagination: false,
+                    sort: false,
                 }}
             />
         </Box>

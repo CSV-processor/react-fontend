@@ -3,7 +3,7 @@ import {Box} from "@mui/material"
 
 import UserMenu from "components/UserMenu/UserMenu"
 import Logo from "components/Logo/Logo"
-import {generateSx, ISxProps} from "modules/MuiSxComponentInject"
+import {generateSx, ISxProps} from "modules/muiSxComponentInject"
 
 
 export default function Header({sx}: ISxProps) {
