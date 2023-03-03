@@ -1,6 +1,5 @@
-export type ParsedColumn = string
 export type ParsedOneData = {[key: string]: any}
 export interface ParsedResult {
-    columns: ParsedColumn[]
+    columns: string[]
     data: ParsedOneData[]
 }

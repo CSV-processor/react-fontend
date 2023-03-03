@@ -1,6 +1,6 @@
 import {parse} from "csv-parse/browser/esm/sync"
 
-import {ParsedResult, ParsedColumn, ParsedOneData} from "../../types"
+import {ParsedResult, ParsedOneData} from "../../types"
 import {AbstractTableLoad, LoadError} from "../abstract"
 
 
@@ -29,7 +29,7 @@ export class CsvTableLoad extends AbstractTableLoad {
         }
     }
 
-    _getColumnsFromRaw(raw: string[][]): ParsedColumn[]  {
+    _getColumnsFromRaw(raw: string[][]): string[]  {
         const columns = raw[0]
         if (typeof columns === "undefined") throw new LoadError()
 

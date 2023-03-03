@@ -2,7 +2,8 @@ import React from "react"
 import {Box, FormControlLabel, TextField} from "@mui/material"
 import MUIDataTable from "mui-datatables"
 
-import {generateSx, ISxProps} from "modules/muiSxComponentInject"
+import {mergeSx, ISxProps} from "modules/muiSxComponentInject"
+import CustomToolbar from "components/CustomToolbar/CustomToolbar"
 
 
 const columns = [
@@ -44,8 +45,7 @@ interface TableEditorProps extends ISxProps {
 
 
 export default function TableEditor({sx, data}: TableEditorProps) {
-    const thisSx = {"height": "578px"}
-    sx = generateSx({sx: thisSx, parentSx: sx})
+    sx = mergeSx(sx, {"height": "578px"})
 
     return (
         <Box sx={sx}>
@@ -58,6 +58,9 @@ export default function TableEditor({sx, data}: TableEditorProps) {
                     tableBodyMaxHeight: "590px",
                     pagination: false,
                     sort: false,
+                    customToolbar: () => (
+                        <CustomToolbar />
+                    )
                 }}
             />
         </Box>

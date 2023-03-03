@@ -3,37 +3,51 @@ import {Box} from "@mui/material"
 
 import ToolsMenu from "components/ToolsMenu/ToolsMenu"
 import TableEditor from "components/TableEditor/TableEditor"
-import {generateSx, ISxProps} from "modules/muiSxComponentInject"
-import {CsvTableLoad, ParsedOneData} from "modules/tableTools"
+import {mergeSx, ISxProps} from "modules/muiSxComponentInject"
+import {CsvTableLoad, CsvTableDump, ParsedResult} from "modules/tableTools"
 
 
 export default function Main({sx}: ISxProps) {
-    const thisSx = {backgroundColor: "hsl(220, 15%, 16%)"}
-    sx = generateSx({sx: thisSx, parentSx: sx})
+    sx = mergeSx(sx, {backgroundColor: "hsl(220, 15%, 16%)"})
 
-    const [data, setData] = React.useState<ParsedOneData[]>([])
-    const loader = new CsvTableLoad()
+    const [data, setData] = React.useState<ParsedResult>({data: [], columns: []})
+    const csvTableLoader = new CsvTableLoad()
+    const csvTableDumper = new CsvTableDump()
 
-    function handleImportClick (event: React.ChangeEvent<HTMLInputElement>) {
+    function handleImportClick(event: React.ChangeEvent<HTMLInputElement>) {
         if (!event.target.files) return
 
         const file = event.target.files[0]
-
         const reader = new FileReader()
         reader.readAsText(file)
         reader.onload = () => {
             const result = reader.result as string
-            const data_ = loader.load(result)
-            setData(data_.data)
+            const parsedResult = csvTableLoader.load(result)
+            setData(parsedResult)
         }
+    }
+
+    function handleExportClick(event: React.MouseEvent<HTMLLabelElement>) {
+        const csvString = csvTableDumper.dump(data)
+        const encodedCsv = encodeURIComponent(csvString)
+        const link = document.createElement("a")
+        link.href = `data:text/csv;charset=utf-8,${encodedCsv}`
+        link.download = "data.csv"
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
     }
 
     return (
         <Box sx={sx}>
-            <ToolsMenu sx={{margin: "0 10px"}} onImportClick={handleImportClick} />
+            <ToolsMenu
+                sx={{margin: "0 10px"}}
+                onImportClick={handleImportClick}
+                onExportClick={handleExportClick}
+            />
             <TableEditor
                 sx={{margin: "10px 10px 0 10px"}}
-                data={data}
+                data={data.data}
             />
         </Box>
     )

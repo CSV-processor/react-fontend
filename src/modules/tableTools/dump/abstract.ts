@@ -1,7 +1,7 @@
-import {DataGridItems} from "../types"
+import {ParsedResult} from "../types"
 
 export abstract class AbstractTableDump {
-    abstract dump(data: DataGridItems): string
+    abstract dump(data: ParsedResult): string
 }
 
 export class DumpError extends Error {

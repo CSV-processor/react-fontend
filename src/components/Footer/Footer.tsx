@@ -2,11 +2,11 @@ import React from "react"
 import {Box} from "@mui/material"
 
 import Author from "components/Author/Author"
-import {generateSx, ISxProps} from "modules/muiSxComponentInject"
+import {mergeSx, ISxProps} from "modules/muiSxComponentInject"
 
 
 export default function Footer({sx}: ISxProps) {
-    const thisSx = {
+    sx = mergeSx(sx, {
         display: "flex",
         justifyContent: "flex-end",
         alignItems: "flex-end",
@@ -14,8 +14,7 @@ export default function Footer({sx}: ISxProps) {
         padding: "20px",
 
         backgroundColor: "hsl(223, 14%, 10%)",
-    }
-    sx = generateSx({sx: thisSx, parentSx: sx})
+    })
 
     return (
         <Box sx={sx}>

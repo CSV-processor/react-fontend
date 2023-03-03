@@ -1,17 +1,16 @@
 import React from "react"
 import {Box, Link} from "@mui/material"
 
-import {generateSx, ISxProps} from "modules/muiSxComponentInject"
+import {mergeSx, ISxProps} from "modules/muiSxComponentInject"
 
 
 export default function Author({sx}: ISxProps) {
-    const thisSx = {
+    sx = mergeSx(sx, {
         color: "hsl(36, 2%, 91%)",
         fontFamily: "\"Roboto\", sans-serif",
         fontSize: "15px",
         fontWeight: "bold",
-    }
-    sx = generateSx({sx: thisSx, parentSx: sx})
+    })
 
     return (
         <Box sx={sx}>

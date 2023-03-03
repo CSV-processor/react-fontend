@@ -8,12 +8,12 @@ import AddColumnIcon from "components/AddColumnIcon/AddColumnIcon"
 export default function CustomToolbar() {
     return (
         <>
-            <Tooltip title={"custom icon"}>
+            <Tooltip title={"Add row"}>
                 <IconButton aria-label="add-row">
                     <AddRowIcon />
                 </IconButton>
             </Tooltip>
-            <Tooltip title={"custom icon"}>
+            <Tooltip title={"Add column"}>
                 <IconButton aria-label="add-column">
                     <AddColumnIcon />
                 </IconButton>

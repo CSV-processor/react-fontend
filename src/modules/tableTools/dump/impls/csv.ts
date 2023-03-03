@@ -1,17 +1,15 @@
-import {stringify} from "csv-stringify/sync"
+import {stringify} from "csv-stringify/browser/esm/sync"
 
-import {DataGridItems} from "../../types"
 import {AbstractTableDump, DumpError} from "../abstract"
+import type {ParsedResult} from "../../types"
 
 
 export class CsvTableDump extends AbstractTableDump {
-    dump(data: DataGridItems): string {
-        let dumpedData: string
+    dump(parsedData: ParsedResult): string {
         try {
-            dumpedData = stringify(data, {header: true})
+            return stringify(parsedData.data, {header: true, columns: parsedData.columns})
         } catch (error) {
             throw new DumpError()
         }
-        return dumpedData
     }
 }

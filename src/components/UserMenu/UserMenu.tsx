@@ -1,12 +1,11 @@
 import React from "react"
 import {Box} from "@mui/material"
 
-import {generateSx, ISxProps} from "modules/muiSxComponentInject"
+import {mergeSx, ISxProps} from "modules/muiSxComponentInject"
 
 
 export default function UserMenu({sx}: ISxProps) {
-    const thisSx = {width: "60px"}
-    sx = generateSx({sx: thisSx, parentSx: sx})
+    sx = mergeSx(sx, {width: "60px"})
 
     return (
         <Box sx={sx}>

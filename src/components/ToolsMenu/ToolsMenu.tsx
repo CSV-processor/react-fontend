@@ -1,34 +1,37 @@
 import React from "react"
 import {Button, Box} from "@mui/material"
 
-import {generateSx, ISxProps} from "modules/muiSxComponentInject"
+import {mergeSx, ISxProps} from "modules/muiSxComponentInject"
 
 
 interface IToolsMenuProps extends ISxProps {
-    onImportClick?: React.ChangeEventHandler | undefined
-    onExportClick?: React.ChangeEventHandler | undefined
+    onImportClick: React.ChangeEventHandler<HTMLInputElement>
+    onExportClick: React.MouseEventHandler<HTMLLabelElement>
 }
 
 
 interface IButton {
-    onChange: React.ChangeEventHandler | undefined,
-    name: string,
+    children: JSX.Element,
     props?: {[k: string]: any}
 }
 
 
 export default function ToolsMenu({sx, onImportClick, onExportClick}: IToolsMenuProps) {
-    const thisSx = {
+    sx = mergeSx(sx, {
         display: "flex",
         gap: "5px",
 
         height: "50px",
-    }
-    sx = generateSx({sx: thisSx, parentSx: sx})
+    })
 
-    const buttons = [
-        {onChange: onImportClick, name: "Import", props: {accept: ".csv", type: "file"}},
-        {onChange: onExportClick, name: "Export"},
+    const buttons: IButton[] = [
+        {children:
+            <>
+                <input hidden onChange={onImportClick} accept=".csv" type="file" />
+                Import
+            </>
+        },
+        {children: <>Export</>, props: {onClick: onExportClick}}
     ]
 
     return (
@@ -39,9 +42,13 @@ export default function ToolsMenu({sx, onImportClick, onExportClick}: IToolsMenu
 
 function createButton(buttons: IButton[]) {
     return buttons.map((item) => (
-        <Button variant="contained" component="label" sx={{width: "100%"}}>
-            <input hidden onChange={item.onChange} {...(item.props ?? {})} />
-            {item.name}
+        <Button
+            variant="contained"
+            component="label"
+            sx={{width: "100%"}}
+            {...(item.props ?? {})
+        }>
+            {item.children}
         </Button>
     ))
 }
